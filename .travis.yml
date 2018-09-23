@@ -12,7 +12,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-udemy-frontend"
-  environment: "DockerUdemyFrontend-env"
+  env: "DockerUdemyFrontend-env"
   bucket_name: "elasticbeanstalk-us-east-2-370725029584"
   bucket_path: "docker-udemy-frontend"
   on:
