@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t alexgriff/udemy-docker-frontend -f Dockerfile.dev .
+
+script:
+  - docker run alexgriff/udemy-docker-frontend npm run test -- --coverage
