@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run alexgriff/udemy-docker-frontend npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-udemy-frontend"
+  environment: "DockerUdemyFrontend-env"
+  bucket_name: "elasticbeanstalk-us-east-2-370725029584"
+  bucket_path: "docker-udemy-frontend"
+  on:
+    branch: master
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_key_id:
+    secure: "$AWS_SECRET_KEY"
